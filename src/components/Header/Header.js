@@ -10,8 +10,13 @@ const CURRENCY_QUERY = gql`
   }
 `;
 
-function CurrencyFilter() {
+function CurrencyFilter(props) {
   const { data, loading, error } = useQuery(CURRENCY_QUERY);
+
+  function changeCurrency() {
+    let currency = document.getElementById("currency").value;
+    props.context.setMessage(currency);
+  }
 
   if(loading) return (
       <select>
@@ -25,7 +30,7 @@ function CurrencyFilter() {
   );
   const currencies = data.currency;
   return (
-    <select>
+    <select id="currency" onChange={changeCurrency}>
         {currencies.map((currency,index) => 
             <option key={index} value={currency}>{currency}</option>
         )};
@@ -55,7 +60,12 @@ function Header() {
                 </div>
             </div>
             <div className="currency-filter">
-              <CurrencyFilter />
+              <CurrencyContextConsumer>
+                {context => (
+                  <CurrencyFilter context ={context} />
+                )}
+              </CurrencyContextConsumer>
+              
             </div>
             <div className="cart-list">
               <div className="cart-item">
