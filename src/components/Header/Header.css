@@ -1,0 +1,254 @@
+.content {
+    width: 100%;
+}
+
+.top {
+    width: 100%;
+    /* height: 60px; */
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px rgb(245, 245, 245);
+    padding: 5px 5% 5px 3%;
+    background-color: rgb(253, 253, 253);
+}
+
+.logo-img {
+    width: 170px;
+}
+
+.logo-img img {
+    width: 100%;
+}
+
+.cart-img {
+    width: 22px;
+    position: relative;
+}
+
+.cart-img img {
+    width: 100%;
+}
+
+.cart-no {
+    position: absolute;
+    top: -9px;
+    right: -18px;
+    font-size: .95em;
+    font-weight: 600;
+    color: rgb(140, 140, 140);
+}
+
+.side-background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.side-con {
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgb(245, 245, 245);
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+.side-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.side-top p {
+    font-size: .65em;
+    color: rgb(130, 130, 130);
+}
+
+.side-top .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    font-size: .7em;
+    border: solid 1px rgb(190, 190, 190);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.side-top .close img {
+    width: 10px;
+}
+
+.currency-filter {
+    margin-top: 40px;
+}
+
+.currency-filter select {
+    padding: 5px 15px;
+    font-size: .9em;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.cart-list {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    padding: 20px 0px;
+    overflow: auto;
+}
+
+.cart-item {
+    width: 100%;
+    min-height: 150px;
+    background-color: white;
+    display: flex;
+    flex-flow: row;
+    /* align-items: baseline; */
+    justify-content: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.cart-details {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.cart-details p {
+    font-size: .85em;
+    color: rgb(100, 100, 100);
+}
+
+.cart-quantity {
+    padding: 10px;
+    border: solid 1px rgb(170, 170, 170);
+}
+
+.cart-quantity span:first-child,
+.cart-quantity span:last-child {
+    padding: 7px;
+    cursor: pointer;
+}
+
+.cart-item-price {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    padding: 0px 30px;
+}
+
+.cart-item-img {
+    width: 35%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cart-item-img img {
+    width: 100%;
+}
+
+.cancel {
+    position: absolute;
+    top: -13px;
+    right: -10px;
+    /* padding: 5px; */
+    cursor: pointer;
+    font-size: .8em;
+    font-weight: 500;
+}
+
+.cart-footer {
+    width: 100%;
+    border-top: solid 1px rgb(200, 200, 200);
+}
+
+.cart-subtotal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+.cart-subtotal p:first-child {
+    font-size: .9em;
+    color: rgb(100, 100, 100);
+    font-weight: 500;
+}
+
+.cart-subtotal p:last-child {
+    font-size: .9em;
+    color: rgb(70, 70, 70);
+    font-weight: 400;
+}
+
+.cart-footer button {
+    padding: 14px 11px;
+    border: solid 1px #4B5548;
+    text-align: center;
+    cursor: pointer;
+    background-color: #4B5548;
+    color: #FCFCF9;
+    font-size: .75em;
+    font-weight: 500;
+    width: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .top {
+        position: fixed;
+        top: 0px;
+        justify-content: flex-end;
+        padding: 18px 25px;
+        border-bottom: none;
+        box-shadow: 0px 3px 9px 0px rgba(50, 50, 50, 0.48);
+    }
+
+    .logo-img {
+        display: none;
+    }
+
+    .cart-no {
+        top: -6px;
+        right: -16px;
+        font-size: .9em;
+        font-weight: 600;
+    }
+    .side-con {
+        position: absolute;
+        z-index: 101;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: rgb(245, 245, 245);
+        width: 100%;
+    }
+}
