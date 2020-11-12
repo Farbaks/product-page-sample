@@ -221,7 +221,6 @@ class Header extends React.Component {
   }
 
   removeItemFromCart = (cartid) => {
-    console.log("remove");
     let Items = this.state.cartItems;
     let newItems = Items.filter(Item => Item.id !== cartid);
     this.setState({ cartItems: newItems });
