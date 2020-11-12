@@ -40,7 +40,7 @@ function CurrencyFilter(props) {
 
 function currencyFormat(amount) {
   try {
-    if (amount % 1 == 0) {
+    if (amount % 1 === 0) {
       return (amount).toLocaleString() + ".00";
     }
     return (amount).toLocaleString();
