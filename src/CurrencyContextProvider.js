@@ -8,11 +8,14 @@ class CurrencyContextProvider extends Component {
     }
     render() {
         return (
-            <Provider value = {
-            {   state: this.state,
-                setMessage: (value) => this.setState({
-                            currency: value })}}>
-            {this.props.children}   
+            <Provider value={
+                {
+                    state: this.state,
+                    setCurrency: (value) => this.setState({
+                        currency: value
+                    }),
+                }}>
+                {this.props.children}
             </Provider>
         )
     }

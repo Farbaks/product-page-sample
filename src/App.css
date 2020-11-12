@@ -65,7 +65,8 @@
   margin: 40px 0px 5px 0px;
 }
 .product-price {
-  font-size: 1.05em;
+  white-space: nowrap;
+  font-size: 1.02em;
   color: rgb(10,10,10);
   font-weight: 300;
   margin: 0px 0px 20px 0px;
