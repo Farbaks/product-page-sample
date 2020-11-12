@@ -68,13 +68,6 @@ function SideBar(props) {
       <div className="cart-message">
         <p>Loading...</p>
       </div>
-      <div className="cart-footer">
-        <div className="cart-subtotal">
-          <p>Subtotal:</p>
-          <p>{props.context.state.currency} --</p>
-        </div>
-        <button disabled>PROCEED TO CHECKOUT</button>
-      </div>
     </div>
 
   );
@@ -83,18 +76,20 @@ function SideBar(props) {
       <div className="cart-message">
         <p>An error occured. Please reload page</p>
       </div>
-      <div className="cart-footer">
-        <div className="cart-subtotal">
-          <p>Subtotal:</p>
-          <p>{props.context.state.currency} --</p>
-        </div>
-        <button disabled>PROCEED TO CHECKOUT</button>
-      </div>
     </div>
   );
   const products = data.products;
 
   let cartItems = props.cartItems;
+  if(cartItems.length === 0) {
+    return (
+      <div className="cart-lower">
+        <div className="cart-message">
+          <p>There are no items in your cart.</p>
+        </div>
+      </div>
+    );
+  }
   cartItems.forEach(Item => {
     Item.price = products.filter(product => product.id === Item.id)[0].price;
   });
