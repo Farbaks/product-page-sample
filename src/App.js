@@ -45,7 +45,9 @@ function ProductList(props) {
     <div className="product-list">
       {products.map((product, index) =>
         <div key={index} className="product-item">
-          <img src={product.image_url} alt={product.title} />
+          <div className="product-item-img">
+            <img src={product.image_url} alt={product.title} />
+          </div>
           <p className="product-title">{product.title}</p>
           <p className="product-price">From {props.context.state.currency} {currencyFormat(product.price)}</p>
           <button onClick={() => props.addToCart(product)}>Add to Cart</button>
